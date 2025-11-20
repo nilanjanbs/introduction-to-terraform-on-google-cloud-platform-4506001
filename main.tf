@@ -1,6 +1,6 @@
 data "google_compute_image" "ubuntu" {
   most_recent = true
-  project     = "terraform-learning-478805" 
+  project     = "ubuntu-os-cloud" 
   family      = "ubuntu-2204-lts"
 }
 
