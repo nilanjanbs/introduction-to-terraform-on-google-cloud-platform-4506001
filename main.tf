@@ -1,19 +1,13 @@
-
-resource "google_compute_network" "app-network" {
-  name                    = "app-network"
+resource "google_compute_network" "app" {
+  name                    = "app"
   auto_create_subnetworks = false
 }
 
-
-resource "google_compute_subnetwork" "app-subnetwork" {
-  name          = "app-subnetwork"
+resource "google_compute_subnetwork" "app" {
+  name          = "app"
   ip_cidr_range = "10.2.0.0/16"
   region        = "us-west1"
-  network       = google_compute_network.app-network.id
-  secondary_ip_range {
-    range_name    = "tf-test-secondary-range-update1"
-    ip_cidr_range = "192.168.10.0/24"
-  }
+  network       = google_compute_network.app.id
 }
 
 data "google_compute_image" "ubuntu" {
@@ -26,14 +20,13 @@ resource "google_compute_instance" "web" {
   name         = "web"
   machine_type = "e2-micro"
 
-  
   boot_disk {
     initialize_params {
       image = data.google_compute_image.ubuntu.self_link
     }
   }
   network_interface {
-   subnetwork = "app-subnetwork"
+   subnetwork = "app"
    access_config {
       # Leave empty for dynamic public IP
     }
