@@ -1,7 +1,21 @@
+variable "netowrk_name" {
+  type    = string
+  default = "app"
+}
 
 variable "project_id" {
   type    = string
   default = "terraform-learning-478805"
+}
+
+variable "sub_netowrk_name" {
+  type    = string
+  default = "app"
+}
+
+variable "ip_range" {
+  type    = string
+  default = "10.10.20.0/24"
 }
 
 variable "region" {
