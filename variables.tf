@@ -13,6 +13,11 @@ variable "sub_netowrk_name" {
   default = "app"
 }
 
+variable "ip_range" {
+  type    = string
+  default = "10.10.20.0/24"
+}
+
 variable "region" {
   type    = string
   default = "us-west1"
