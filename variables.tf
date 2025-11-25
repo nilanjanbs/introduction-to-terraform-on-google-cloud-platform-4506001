@@ -9,6 +9,11 @@ variable "region" {
   default = "us-west1"
 }
 
+variable "sub_netowrk_name" {
+  type    = string
+  default = "app"
+}
+
 variable "image-project" {
   type    = string
   default = "ubuntu-os-cloud"
