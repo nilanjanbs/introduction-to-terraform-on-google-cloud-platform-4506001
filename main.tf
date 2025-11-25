@@ -50,4 +50,7 @@ resource "google_compute_instance" "web" {
     }
   }
 
+  metadata_startup_script = "apt update;apt install nginx; echo ${var.project_id} > /var/www/html/index.html"
+  allow_stopping_for_update = true
+
 }
