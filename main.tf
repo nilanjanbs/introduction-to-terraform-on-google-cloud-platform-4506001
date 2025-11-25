@@ -16,7 +16,7 @@ module "app_network" {
     name                    = "${var.netowrk_name}-ingress"
     description             = "Ingress_rule"
     source_ranges           = ["0.0.0.0/0"]
-    source_tags             = "${var.netowrk_name}-ingress"
+    source_tags             = ["${var.netowrk_name}-ingress"]
     allow = [
       {
         protocol = "tcp"

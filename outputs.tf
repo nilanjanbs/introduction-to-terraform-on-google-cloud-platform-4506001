@@ -8,3 +8,7 @@ output "subnet_ip" {
 output "subnet_name" {
   value = module.app_network.subnets_names[0]
 }
+
+output "network_name" {
+  value = module.app_network.network_name
+}
